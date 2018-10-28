@@ -1,0 +1,79 @@
+# depslib dependency file v1.0
+1538525993 source:d:\utn parcial\gonzalez_calixto_1f\functionsforprojects.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"functionsForProjects.h"
+
+1538520160 d:\utn parcial\gonzalez_calixto_1f\functionsforprojects.h
+
+1538527205 source:d:\utn parcial\gonzalez_calixto_1f\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Cliente.h"
+	"functionsForProjects.h"
+
+1538525887 source:d:\utn parcial\gonzalez_calixto_1f\juego.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juego.h"
+	"functionsForProjects.h"
+
+1538525984 d:\utn parcial\gonzalez_calixto_1f\juego.h
+
+1538527046 source:d:\utn parcial\gonzalez_calixto_1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"functionsForProjects.h"
+	"juego.h"
+	"cliente.h"
+
+1538525981 d:\utn parcial\gonzalez_calixto_1f\cliente.h
+
+1539036320 source:d:\gonzalez_calixto_1f\functionsforprojects.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"functionsForProjects.h"
+
+1538520160 d:\gonzalez_calixto_1f\functionsforprojects.h
+
+1539043643 source:d:\gonzalez_calixto_1f\cliente.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"Cliente.h"
+	"functionsForProjects.h"
+
+1539036307 d:\gonzalez_calixto_1f\cliente.h
+
+1539046927 source:d:\gonzalez_calixto_1f\juego.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"juego.h"
+	"functionsForProjects.h"
+	"cliente.h"
+
+1539047125 d:\gonzalez_calixto_1f\juego.h
+	"cliente.h"
+
+1539047203 source:d:\gonzalez_calixto_1f\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<string.h>
+	"functionsForProjects.h"
+	"juego.h"
+	"cliente.h"
+

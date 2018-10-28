@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cliente.h
+
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/functionsForProjects.h
+
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/juego.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+juego.h
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/juego.h
+functionsForProjects.h
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/functionsForProjects.h
+cliente.h
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cliente.h
+
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/juego.h
+cliente.h
+C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cliente.h
+
