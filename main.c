@@ -54,6 +54,16 @@ int main()
                                 {4,2,1,0,
                                         {9,9,1999}},
                                 {4,2,3,0,
+                                        {11,8,2004}},
+                                {4,2,3,0,
+                                        {11,8,2004}},
+                                {2,5,3,0,
+                                        {11,8,2004}},
+                                {1,6,3,0,
+                                        {11,8,2004}},
+                                {1,6,3,0,
+                                        {11,8,2004}},
+                                {2,6,3,0,
                                         {11,8,2004}}
     };
     do
@@ -404,7 +414,9 @@ int main()
                 case 5: {
 
                     createArrayOfJuegosAlquilados(juegosAlquilados, juegos, JUEGOSIZE);
-                    
+                    fillJuegosAlquilados(juegosAlquilados, juegos, alquileres, JUEGOSIZE, CLIENTESIZE);
+                    sortByTimesAlquilado(juegosAlquilados,JUEGOSIZE);
+
 
                 }
                     break;
@@ -450,3 +462,4 @@ int main()
     while (menu != 5);
     return 0;
 }
+

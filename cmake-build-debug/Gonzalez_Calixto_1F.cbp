@@ -8,104 +8,104 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug"/>
+				<Option working_dir="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug"/>
+				<Option working_dir="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Gonzalez_Calixto_1F">
-				<Option output="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Gonzalez_Calixto_1F.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug"/>
+				<Option output="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Gonzalez_Calixto_1F.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/."/>
+					<Add directory="C:/Users/yasir/Desktop/parcial1-lab1-utn/."/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gonzalez_Calixto_1F"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gonzalez_Calixto_1F"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Gonzalez_Calixto_1F/fast">
-				<Option output="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Gonzalez_Calixto_1F.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug"/>
+				<Option output="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Gonzalez_Calixto_1F.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/."/>
+					<Add directory="C:/Users/yasir/Desktop/parcial1-lab1-utn/."/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
 					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gonzalez_Calixto_1F/fast"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 Gonzalez_Calixto_1F/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug"/>
+				<Option working_dir="C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/alquiler.c">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/alquiler.c">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/alquiler.h">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/alquiler.h">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cliente.c">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/cliente.c">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cliente.h">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/cliente.h">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/functionsForProjects.c">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/functionsForProjects.c">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/functionsForProjects.h">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/functionsForProjects.h">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/juego.c">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/juego.c">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/juego.h">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/juego.h">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/main.c">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/main.c">
 			<Option target="Gonzalez_Calixto_1F"/>
 		</Unit>
-		<Unit filename="C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/CMakeLists.txt">
+		<Unit filename="C:/Users/yasir/Desktop/parcial1-lab1-utn/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -40,6 +40,11 @@ void alquilerDeUnClienteDeterminado(int idAlquiler,eAlquiler *alquileres, eJuego
 float totalJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
 int importesQueNoSuperanPromedio(eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
 void fechaABuscar(int dia,int mes,int ano,eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
+
+
 void createArrayOfJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, int sizeJuegos);
-void initJuegosAlquilados(int juegosAlquilados[][2], int sizeJuegos );
+void fillJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, eAlquiler *alquileres, int sizeJuegos,
+                          int sizeClientes);
+int getIndexJuegosAlquilados(int idJuego,int sizeJuegos,int juegosAlquilados[][2]);
+void sortByTimesAlquilado(int juegosAlquilados[0][2], int sizeJuegos);
 #endif

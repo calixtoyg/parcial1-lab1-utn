@@ -7,6 +7,7 @@
 #include "cliente.h"
 
 
+
 /**
  * Adds an juegos to the first free space of the array
  * @param juegos *eJuego pointer to array of structs of type eJuego
@@ -456,5 +457,53 @@ void createArrayOfJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, in
         indexJuegosAlquilados++;
     }
 
+
+}
+void fillJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, eAlquiler *alquileres, int sizeJuegos,
+                          int sizeClientes){
+    int i,j,indexJuegosAlquilados;
+    for ( i = 0; i < sizeJuegos; ++i) {
+        for (j = 0; j < sizeClientes * sizeJuegos; ++j) {
+            if(alquileres[j].idJuego == juegos[i].idJuego && alquileres[j].isEmpty==0){
+                indexJuegosAlquilados = getIndexJuegosAlquilados(juegos[i].idJuego,sizeJuegos,juegosAlquilados);
+                if (indexJuegosAlquilados!=-1){
+                    juegosAlquilados[indexJuegosAlquilados][1] += 1;
+                }
+            }
+        }
+    }
+
+}
+
+int getIndexJuegosAlquilados(int idJuego,int sizeJuego,int juegosAlquilados[][2]) {
+    int i;
+    for (i = 0; i < sizeJuego; ++i) {
+        if(juegosAlquilados[i][0] == idJuego){
+            return i;
+        }
+    }
+    i=-1;
+    return i;
+}
+void sortByTimesAlquilado(int juegosAlquilados[][2], int sizeJuegos){
+    int auxIdJuego,auxCantJuego;
+    for (int i = 0; juegosAlquilados[i][0]!=0; ++i) {
+            for (int j = i; j < sizeJuegos-1; ++j) {
+                if(juegosAlquilados[i][1]< juegosAlquilados[j][1]&&juegosAlquilados[j][0]!=0){
+                    auxIdJuego=juegosAlquilados[j][0];
+                    auxCantJuego=juegosAlquilados[j][1];
+                    juegosAlquilados[j][0]=juegosAlquilados[i][0];
+                    juegosAlquilados[j][1]=juegosAlquilados[i][1];
+                    juegosAlquilados[i][0]=auxIdJuego;
+                    juegosAlquilados[i][1]=auxCantJuego;
+                } 
+
+            }
+
+    }
+    int j;
+    for (j = 0; j < 10; ++j) {
+        printf("| %d | %d |\n",juegosAlquilados[j][0],juegosAlquilados[j][1]);
+    }
 
 }

@@ -1,3 +1,3 @@
-C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/CMakeFiles/Gonzalez_Calixto_1F.dir
-C:/Users/yasir/Desktop/Gonzalez_Calixto_1F/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/CMakeFiles/Gonzalez_Calixto_1F.dir
+C:/Users/yasir/Desktop/parcial1-lab1-utn/cmake-build-debug/CMakeFiles/rebuild_cache.dir
