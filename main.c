@@ -3,8 +3,8 @@
 #include <math.h>
 #include <string.h>
 
-#define JUEGOSIZE 20
-#define CLIENTESIZE 20
+#define JUEGOSIZE 6
+#define CLIENTESIZE 7
 #define IDJUEGO 2
 
 #include "functionsForProjects.h"
@@ -29,13 +29,17 @@ int main()
     int dia, mes, ano;
     int idJ = 0, idC = 0, idA = 0, quantityOfJ = 5, quantityOfC = 6;
     int idJuegoParaAlquiler, idClienteParaAlquiler;
+
     char desciprcion[CHARSIZE], name[CHARSIZE] = {}, lastname[CHARSIZE], domicilio[CHARSIZE], telefono[CHARSIZE];
     int juegosAlquilados[JUEGOSIZE][IDJUEGO];
+    Alquileres aquileresDeJuegos[JUEGOSIZE];
+    Alquileres aquileresDeClientes[CLIENTESIZE];
+
     int isJuegoSuccesfull, isClienteSuccesfull, isAlquilerSuccesfull;
     float importe, promedioJuegosConAlquileres=0;
     eJuego juegos[JUEGOSIZE]={{1,"Ben diez",200,0},
                        {2,"Magic Booster's pack",1500.49,0},
-                       {3,"Hasbro Monopoly",1249.99,0},
+                       {3,"Hasbro Monopoly",500},
                        {4,"Hasbro Guess Who?",499.99,0},
                        {5,"Hasbro Trivial Pursuit",14.99,0}};
     eCliente clientes[CLIENTESIZE]={{1,"Perez","Juan","Av. Santa fe 2544","1167232112",0},
@@ -45,25 +49,26 @@ int main()
                            {5,"Oyuela","Juan","Juncal 1433","115647922",0},
                            {6,"Cistari","Renzo","Nueva Cordoba 102","2976329121",0},
     };
-    eAlquiler alquileres[JUEGOSIZE*CLIENTESIZE] = {{1,1,2,0,
+    eAlquiler alquileres[JUEGOSIZE*CLIENTESIZE] = {
+                                {1,1,4,0,
                                         {10,11,2003}},
-                                {2,1,3,0,
+                                {2,1,6,0,
                                         {15,1,2000}},
-                                {3,1,4,0,
+                                {3,1,3,0,
                                         {12,10,2000}},
                                 {4,2,1,0,
                                         {9,9,1999}},
-                                {4,2,3,0,
+                                {5,2,1,0,
                                         {11,8,2004}},
-                                {4,2,3,0,
+                                {6,2,3,0,
                                         {11,8,2004}},
-                                {2,5,3,0,
+                                {7,2,3,0,
                                         {11,8,2004}},
-                                {1,6,3,0,
+                                {8,3,3,0,
                                         {11,8,2004}},
-                                {1,6,3,0,
+                                {9,3,1,0,
                                         {11,8,2004}},
-                                {2,6,3,0,
+                                {10,3,3,0,
                                         {11,8,2004}}
     };
     do
@@ -256,7 +261,7 @@ int main()
                             printf("------------------------------------------------------------\n");
                             getStringLettersOnly(lastname, "Ingrese el apellido:\n", CHARSIZE, 3);
 
-                            printf("menuInformes------------------------------------------------------------\n");
+                            printf("------------------------------------------------------------\n");
                             getStringOverbuffCheck(&domicilio, "Ingrese el domicilio:\n", CHARSIZE);
                             printf("------------------------------------------------------------\n");
                             getStringOverbuffCheck(&telefono, "Ingrese el telefono:\n", CHARSIZE);
@@ -387,13 +392,14 @@ int main()
                 {
                 case 1:
                      printf("---------------------------------------------------------------\n");
-                     printf("| Total = %f", totalJuegosAlquilados(alquileres,juegos,clientes,JUEGOSIZE,CLIENTESIZE));
-                     printf("| Promedio de Alquileres = %f", promedioJuegosAlquilados(alquileres,juegos,clientes,JUEGOSIZE,CLIENTESIZE));
+                     printf("| Total = %f\n", totalJuegosAlquilados(alquileres,juegos,clientes,JUEGOSIZE,CLIENTESIZE));
+                     printf("| Promedio de Alquileres = %f\n", promedioJuegosAlquilados(alquileres,juegos,clientes,JUEGOSIZE,CLIENTESIZE));
                      printf("---------------------------------------------------------------\n");
                     break;
                 case 2:
+
                      printf("---------------------------------------------------------------\n");
-                     printf("| Total de importes que no superan el promedio = %d", importesQueNoSuperanPromedio(alquileres,juegos,clientes,JUEGOSIZE,CLIENTESIZE));
+                     printf("| Total de importes que no superan el promedio = %d\n", importesQueNoSuperanPromedio(alquileres,juegos,clientes,JUEGOSIZE,CLIENTESIZE));
                      printf("---------------------------------------------------------------\n");
 
                     break;
@@ -413,9 +419,11 @@ int main()
                     break;
                 case 5: {
 
-                    createArrayOfJuegosAlquilados(juegosAlquilados, juegos, JUEGOSIZE);
-                    fillJuegosAlquilados(juegosAlquilados, juegos, alquileres, JUEGOSIZE, CLIENTESIZE);
-                    sortByTimesAlquilado(juegosAlquilados,JUEGOSIZE);
+                    initAlquileresVecesAlquilado(aquileresDeJuegos, JUEGOSIZE);
+//                    createArrayOfJuegosAlquilados(juegosAlquilados, juegos, JUEGOSIZE);
+                    fillJuegosAlquilados(aquileresDeJuegos, juegos, alquileres, JUEGOSIZE, CLIENTESIZE);
+                    sortByTimesAlquilado(aquileresDeJuegos,JUEGOSIZE,0);
+                    printAlquileresMenosAlquilado(aquileresDeJuegos, juegos,JUEGOSIZE);
 
 
                 }

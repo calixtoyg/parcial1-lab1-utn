@@ -43,7 +43,8 @@ int addCliente(eCliente *clientes, int len, char name[], char lastName[], char d
  * @param sector int sector of clientes
  * @return returns 0 if clientes was deleted -1 if operation was cancelled
  */
-int modifyCliente(eCliente *clientes, int len, int id, char name[], char lastName[], char domicilio[], char telefono[]) {
+int
+modifyCliente(eCliente *clientes, int len, int id, char name[], char lastName[], char domicilio[], char telefono[]) {
     int i;
     for (i = 0; i < len; ++i) {
         if (clientes[i].idCliente == id && clientes[i].isEmpty == 0) {
@@ -154,8 +155,8 @@ int getFreeSpaceClientes(eCliente clientes[], int len) {
 int initClientes(eCliente *clientes, int len) {
     int i;
     for (i = 0; i < len; i++) {
-            if(clientes[i].isEmpty!=0||clientes[i].idCliente==0)
-                clientes[i].isEmpty = 1;
+        if (clientes[i].isEmpty != 0 || clientes[i].idCliente == 0)
+            clientes[i].isEmpty = 1;
     }
     return -1;
 
@@ -179,6 +180,7 @@ int findClienteById(eCliente clientes[], int len, int id) {
     printf("No hay Cliente con el ID:%d en el array.\n", id);
     return -1;
 }
+
 void sortByLNameAndName(eCliente *clientes, int len) {
     int i;
     int j;

@@ -20,6 +20,13 @@ typedef struct {
     eFecha fecha;
 }eAlquiler;
 
+typedef struct {
+    int idJuego;
+    int idCliente;
+    int cantidadDeAlquileres;
+    int isEmpty;
+}Alquileres;
+
 
 int initJuegos(eJuego *juegos, int len);
 int addJuego(eJuego *juegos, int len, char description[],float importe);
@@ -43,8 +50,12 @@ void fechaABuscar(int dia,int mes,int ano,eAlquiler *alquileres, eJuego *juegos,
 
 
 void createArrayOfJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, int sizeJuegos);
-void fillJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, eAlquiler *alquileres, int sizeJuegos,
+void fillJuegosAlquilados(Alquileres *juegosAlquilados, eJuego *juegos, eAlquiler *alquileres, int sizeJuegos,
                           int sizeClientes);
 int getIndexJuegosAlquilados(int idJuego,int sizeJuegos,int juegosAlquilados[][2]);
-void sortByTimesAlquilado(int juegosAlquilados[0][2], int sizeJuegos);
+void sortByTimesAlquilado(Alquileres *alquileresMap, int sizeJuegos, int order);
+void initAlquileresMap(int alquileresMap[][2], int sizeJuegos);
+void printAlquileresMenosAlquilado(Alquileres *alquileres, eJuego *juegos, int sizeJuegos);
+
+void initAlquileresVecesAlquilado(Alquileres *alquileres, int sizeJuegos);
 #endif
