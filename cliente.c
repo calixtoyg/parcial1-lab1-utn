@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "Cliente.h"
+#include "cliente.h"
 #include "functionsForProjects.h"
+#include "juego.h"
 
 /**
  * Adds an clientes to the first free space of the array
@@ -180,8 +181,29 @@ int findClienteById(eCliente clientes[], int len, int id) {
     printf("No hay Cliente con el ID:%d en el array.\n", id);
     return -1;
 }
-
+/**
+ * Ordena clientes por primero apellido y despues nombre
+ * @param clientes
+ * @param len
+ */
 void sortByLNameAndName(eCliente *clientes, int len) {
+
+//    int i, j;
+//    char *key;
+//    eCliente auxclientes;
+//    for (i = 1; i < len; i++) {
+//        key = clientes[j].lastName;
+//        j = i - 1;
+//        while (j >= 0 && strcmp(key, clientes[j].lastName) > 0) {
+//            if (clientes[j].isEmpty == 0) {
+//                clientes[j + 1] = clientes[j];
+//                j = j - 1;
+//            }
+//
+//        }
+//        strcpy(clientes[j+1].lastName,key);
+//
+//    }
     int i;
     int j;
     eCliente auxclientes;
@@ -204,9 +226,8 @@ void sortByLNameAndName(eCliente *clientes, int len) {
 
         }
 
+
     }
-
-
 }
 
 /**
@@ -226,6 +247,91 @@ void toUpperLastNameAndNameClients(eCliente cliente[], int len) {
         for (j = 0; j < strlen(cliente[i].name); ++j) {
             cliente[i].name[j] = toupper(cliente[i].name[j]);
         }
+    }
+}
+/**
+ * Llena juegosAlquilados con el id del cliente por cada struct y la cantidad de veces que este fue rentado.
+ * @param juegosAlquilados Pointer to juegosAlquilados struct (estructura "auxiliar")
+ * @param juegos Pointer to juegos struct
+ * @param alquileres Pointer to alquileres
+ * @param sizeJuegos int size juegos
+ * @param sizeClientes int size clientes
+ */
+void fillClientesQueAlquilaron(Alquileres *juegosAlquilados, eCliente *cliente, eAlquiler *alquileres, int sizeJuegos,
+                               int sizeClientes) {
+    int l, h, k;
+    int i;
+    for (l = 0; l < sizeJuegos; ++l) {
+        juegosAlquilados[l].isEmpty = 0;
+        juegosAlquilados[l].idCliente = cliente[l].idCliente;
+    }
+    for (i = 0; i < sizeJuegos; ++i) {
+        if (cliente[i].isEmpty == 0)
+            for (k = 0; k < sizeJuegos; ++k) {
+                if (juegosAlquilados[k].isEmpty == 0)
+                    for (h = 0; h < sizeClientes * sizeJuegos; h++) {
+                        if (alquileres[h].isEmpty == 0 && juegosAlquilados[k].idCliente == cliente[i].idCliente &&
+                            alquileres[h].idCliente == juegosAlquilados[k].idCliente) {
+                            juegosAlquilados[k].cantidadDeAlquileres += 1;
+                        }
+
+                    }
+
+
+            }
+
+
+    }
+    for (k = 0; k < sizeClientes; ++k) {
+        printf(" EL ID %d ALQUILO %d\n", juegosAlquilados[k].idCliente, juegosAlquilados[k].cantidadDeAlquileres);
+
+    }
+}
+/**
+ * Ordena la cantidad de veces que se alquilo por un cliente un juego en orden ASCENDENTE
+ * @param alquileres Pointer to alquileres struct (estructura "auxiliar")
+ * @param sizeJuegos int size juegos
+ */
+void sortByClientesQueAlquilaron(Alquileres *alquileres, int sizeJuegos) {
+    int j, i, key;
+    Alquileres auxStruct;
+    int auxCantJuego;
+    for (i = 0; i < sizeJuegos; ++i) {
+        for (j = 0; j < sizeJuegos - 1 - i; ++j) {
+            if (alquileres[j].isEmpty == 0 && alquileres[j + 1].isEmpty == 0 &&
+                alquileres[j].cantidadDeAlquileres < alquileres[j + 1].cantidadDeAlquileres) {
+                auxStruct = alquileres[j];
+                alquileres[j] = alquileres[j + 1];
+                alquileres[j + 1] = auxStruct;
+            }
+
+        }
+
+    }
+}
+
+/**
+ * Imprime por consola El/Los cliente/s con mas alquileres.
+ * @param alquileres Pointer to alquileres struct (estructura "auxiliar")
+ * @param clientes Pointer to clientes struct
+ * @param sizeClientes int size clientes
+ */
+void printClienteRealizoMasAlquileres(Alquileres *alquileres, eCliente *clientes, int sizeClientes) {
+    int i = 0, flag = 0, j = 0;
+    printf("El/Los cliente/s con mas alquileres es/son: \n");
+    while (alquileres[j].cantidadDeAlquileres == 0) {
+        j++;
+
+    }
+    printf("El cliente %s %s alquilo %d. \n",
+           clientes[findClienteById(clientes, sizeClientes, alquileres[j].idCliente)].name,
+           clientes[findClienteById(clientes, sizeClientes, alquileres[j].idCliente)].lastName,
+           alquileres[j].cantidadDeAlquileres);
+    for (i = j; alquileres[i].cantidadDeAlquileres == alquileres[i + 1].cantidadDeAlquileres; ++i) {
+        printf("El cliente %s %s alquilo %d. \n",
+               clientes[findClienteById(clientes, sizeClientes, alquileres[i + 1].idCliente)].name,
+               clientes[findClienteById(clientes, sizeClientes, alquileres[i + 1].idCliente)].lastName,
+               alquileres[i + 1].cantidadDeAlquileres);
     }
 }
 

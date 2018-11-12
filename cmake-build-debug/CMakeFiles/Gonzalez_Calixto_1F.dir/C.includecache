@@ -6,9 +6,41 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/yasir/Desktop/parcial1-lab1-utn/cliente.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+cliente.h
+C:/Users/yasir/Desktop/parcial1-lab1-utn/cliente.h
+functionsForProjects.h
+C:/Users/yasir/Desktop/parcial1-lab1-utn/functionsForProjects.h
+juego.h
+C:/Users/yasir/Desktop/parcial1-lab1-utn/juego.h
+
 C:/Users/yasir/Desktop/parcial1-lab1-utn/cliente.h
 
 C:/Users/yasir/Desktop/parcial1-lab1-utn/functionsForProjects.h
+
+C:/Users/yasir/Desktop/parcial1-lab1-utn/juego.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+juego.h
+C:/Users/yasir/Desktop/parcial1-lab1-utn/juego.h
+functionsForProjects.h
+C:/Users/yasir/Desktop/parcial1-lab1-utn/functionsForProjects.h
+cliente.h
+C:/Users/yasir/Desktop/parcial1-lab1-utn/cliente.h
 
 C:/Users/yasir/Desktop/parcial1-lab1-utn/juego.h
 cliente.h

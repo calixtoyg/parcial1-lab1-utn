@@ -1,5 +1,7 @@
 #ifndef JUEGO_H_INCLUDED
 #define JUEGO_H_INCLUDED
+
+
 #include "cliente.h"
 
 typedef struct {
@@ -40,22 +42,22 @@ void sortByImport(eJuego juegos[], int len);
 int addAlquiler(eAlquiler *alquileres, int len, int idJuego, int idCliente, int dia, int mes, int ano);
 int getFreeSpaceAlquiler(eAlquiler *alquileres, int len);
 int initAlquileres(eAlquiler *alquileres, int len);
-void printAlquileres(eAlquiler *alquileres, int lenJuegos,int lenClientes,eJuego *juegos, eCliente *clientes);
 float promedioJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
 void alquilerDeUnJuegoDeterminado(int idJuego,eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
 void alquilerDeUnClienteDeterminado(int idAlquiler,eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
 float totalJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
 int importesQueNoSuperanPromedio(eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
-void fechaABuscar(int dia,int mes,int ano,eAlquiler *alquileres, eJuego *juegos,eCliente *clientes,int lenJuegos,int lenClientes);
+void fechaABuscarParaJuego(int dia, int mes, int ano, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos, int lenClientes);
 
 
-void createArrayOfJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, int sizeJuegos);
-void fillJuegosAlquilados(Alquileres *juegosAlquilados, eJuego *juegos, eAlquiler *alquileres, int sizeJuegos,
-                          int sizeClientes);
-int getIndexJuegosAlquilados(int idJuego,int sizeJuegos,int juegosAlquilados[][2]);
+void fillJuegosAlquilados(Alquileres *juegosAlquilados, eJuego *juegos, eAlquiler *alquileres, int sizeJuegos, int sizeClientes);
 void sortByTimesAlquilado(Alquileres *alquileresMap, int sizeJuegos, int order);
-void initAlquileresMap(int alquileresMap[][2], int sizeJuegos);
 void printAlquileresMenosAlquilado(Alquileres *alquileres, eJuego *juegos, int sizeJuegos);
-
 void initAlquileresVecesAlquilado(Alquileres *alquileres, int sizeJuegos);
+
+//esto no deberia ir aca pero en el otro cliente.h rompe por un bug de un libreria.
+void fechaABuscarParaAlquileres(int dia, int mes, int ano, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos, int lenClientes);
+void printClienteRealizoMasAlquileres(Alquileres *alquileres, eCliente *clientes, int sizeClientes);
+void sortByClientesQueAlquilaron(Alquileres *alquileres, int sizeJuegos);
+void fillClientesQueAlquilaron(Alquileres *juegosAlquilados, eCliente *cliente, eAlquiler *alquileres, int sizeJuegos, int sizeClientes);
 #endif

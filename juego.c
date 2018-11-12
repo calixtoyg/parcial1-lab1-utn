@@ -192,23 +192,29 @@ int findJuegoById(eJuego juegos[], int len, int id) {
 }
 
 /**
- * Sorts juegos by import
+ * Sorts juegos by import DESCENDENTE
  * @param juegos *eJuego pointer to array of structs of type eJuego
  * @param len int size of array
  * @param order int 1 for ascending order 0 for descending order
  */
 void sortByImport(eJuego *juegos, int len) {
     int i;
-    int j;
+    int j,swapped;
     eJuego auxjuegos;
     for (i = 0; i < len - 1; i++) {
-        for (j = i; j < len; ++j) {
-            if (juegos[i].importe < juegos[j].importe && juegos[j].isEmpty == 0 && juegos[i].isEmpty == 0) {
+        swapped = 0;
+        if(juegos[i].isEmpty == 0){
+        for (j = 0; j < len - i -1; ++j) {
+            if (juegos[i].importe < juegos[j].importe && juegos[j].isEmpty == 0) {
                 auxjuegos = juegos[i];
                 juegos[i] = juegos[j];
                 juegos[j] = auxjuegos;
+                swapped = 1;
             }
 
+        }
+        if (swapped == 0)
+            break;
         }
 
 
@@ -262,35 +268,15 @@ int getFreeSpaceAlquiler(eAlquiler alquileres[], int len) {
 }
 
 /**
- * Prints Juegos
- * @param juegos *eJuegos pointer to array of structs of type eJuegos
- * @param len int size of array
+ * Calcula el importe promedio de los juegos calculados
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ * @return total/cantidad float
  */
-void printAlquileres(eAlquiler *alquileres, int lenJuegos, int lenClientes, eJuego *juegos, eCliente *clientes) {
-    int i;
-    int j;
-    system("cls");
-
-
-//            printf("------------------------------------------------------------\n");
-//            printf("| ID Alquiler       |    %d\n", alquileres[i].idAlquiler);
-//            printf("| Descripcion juego |    %s\n", juegos[i].descripcion);
-//            printf("| Importe           |    %f\n", juegos[i].importe);
-//            printf("| Nombre cliente    |    %d\n", alquileres[i].idCliente);
-//            printf("| Nombre cliente    |    %d\n", alquileres[i].idCliente);
-//
-//            printf("| Fecha        |    %d/%d/%d\n", alquileres[i].fecha.dia,alquileres[i].fecha.mes,alquileres[i].fecha.ano);
-//            printf("------------------------------------------------------------\n");
-
-
-
-
-
-
-}
-
-float
-promedioJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos, int lenClientes) {
+float promedioJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos, int lenClientes) {
     int i;
     int j;
     int k;
@@ -310,7 +296,16 @@ promedioJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos, eCliente *client
 
 
 }
-
+/**
+ * Muestra el/los alquileres de un juego determinado por la fecha que recibe como parametro
+ *
+ * @param idJuego int
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ */
 void alquilerDeUnJuegoDeterminado(int idJuego, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos,
                                   int lenClientes) {
     int i;
@@ -334,9 +329,17 @@ void alquilerDeUnJuegoDeterminado(int idJuego, eAlquiler *alquileres, eJuego *ju
             }
     }
 }
-
-void
-alquilerDeUnClienteDeterminado(int idCliente, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos,
+/**
+ * Muestra el/los alquileres de un cliente determinado por la fecha que recibe como parametro
+ *
+ * @param idCliente int
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ */
+void alquilerDeUnClienteDeterminado(int idCliente, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos,
                                int lenClientes) {
     int i;
     int j;
@@ -357,7 +360,15 @@ alquilerDeUnClienteDeterminado(int idCliente, eAlquiler *alquileres, eJuego *jue
             }
     }
 }
-
+/**
+ * Calcula el importe total de los juegos alquilados
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ * @return total float
+ */
 float totalJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos, int lenClientes) {
     int i, j;
     float total = 0;
@@ -373,7 +384,15 @@ float totalJuegosAlquilados(eAlquiler *alquileres, eJuego *juegos, eCliente *cli
 
 
 }
-
+/**
+ * Muestra los importes que no superan el promedio.
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ * @return total int
+ */
 int importesQueNoSuperanPromedio(eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos,
                                  int lenClientes) {
     int i, total = 0;
@@ -385,9 +404,21 @@ int importesQueNoSuperanPromedio(eAlquiler *alquileres, eJuego *juegos, eCliente
     }
     return total;
 }
-
-void fechaABuscar(int dia, int mes, int ano, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes, int lenJuegos,
-                  int lenClientes) {
+/**
+ * Busca una fecha con el dia, mes y año y muestra el/los juegos que se alquilaron.
+ *
+ * @param dia int
+ * @param mes int
+ * @param ano int
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ */
+void fechaABuscarParaJuego(int dia, int mes, int ano, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes,
+                           int lenJuegos,
+                           int lenClientes) {
     int i, j, k;
     for (i = 0; i < lenJuegos; i++) {
         if (juegos[i].isEmpty == 0)
@@ -406,30 +437,21 @@ void fechaABuscar(int dia, int mes, int ano, eAlquiler *alquileres, eJuego *jueg
             }
     }
 }
-
-void createArrayOfJuegosAlquilados(int juegosAlquilados[][2], eJuego *juegos, int sizeJuegos) {
-    int indexJuegosAlquilados = 0, i;
-    for (i = 0; i < sizeJuegos; ++i) {
-        if (juegos[i].isEmpty == 0) {
-            juegosAlquilados[indexJuegosAlquilados][0] = juegos[i].idJuego;
-            juegosAlquilados[indexJuegosAlquilados][1] = 0;
-        } else {
-            juegosAlquilados[indexJuegosAlquilados][0] = 0;
-            juegosAlquilados[indexJuegosAlquilados][1] = 0;
-        }
-        indexJuegosAlquilados++;
-    }
-
-
-}
-
+/**
+ * Llena juegosAlquilados con el id del juego por cada struct y la cantidad de veces que este fue rentado.
+ * @param juegosAlquilados Pointer to juegosAlquilados struct (estructura "auxiliar")
+ * @param juegos Pointer to juegos struct
+ * @param alquileres Pointer to alquileres
+ * @param sizeJuegos int size juegos
+ * @param sizeClientes int size clientes
+ */
 void fillJuegosAlquilados(Alquileres *juegosAlquilados, eJuego *juegos, eAlquiler *alquileres, int sizeJuegos,
                           int sizeClientes) {
-    int l,h,k;
-    int i, j, indexJuegosAlquilados;
-    for (l = 0; l < sizeJuegos; ++l) {
-        juegosAlquilados[l].isEmpty = 0;
-        juegosAlquilados[l].idJuego = juegos[l].idJuego;
+    int h,k;
+    int i;
+    for (i = 0; i < sizeJuegos; ++i) {
+        juegosAlquilados[i].isEmpty = 0;
+        juegosAlquilados[i].idJuego = juegos[i].idJuego;
     }
     for (i = 0; i < sizeJuegos; ++i) {
         if (juegos[i].isEmpty == 0)
@@ -449,18 +471,12 @@ void fillJuegosAlquilados(Alquileres *juegosAlquilados, eJuego *juegos, eAlquile
 
     }
 }
-
-int getIndexJuegosAlquilados(int idJuego, int sizeJuego, int juegosAlquilados[][2]) {
-    int i;
-    for (i = 0; i < sizeJuego; ++i) {
-        if (juegosAlquilados[i][0] == idJuego) {
-            return i;
-        }
-    }
-    i = -1;
-    return i;
-}
-
+/**
+ * Ordena la cantidad de veces que se alquilo un juego en el orden recibido por el tercer parametro
+ * @param alquileres Pointer to alquileres struct (estructura "auxiliar")
+ * @param sizeJuegos int size juegos
+ * @param order
+ */
 void sortByTimesAlquilado(Alquileres *alquileres, int sizeJuegos, int order) {
     int j, i;
     Alquileres auxStruct;
@@ -493,16 +509,11 @@ void sortByTimesAlquilado(Alquileres *alquileres, int sizeJuegos, int order) {
         printf("ID %d VECES ALQUILADO %d \n", alquileres[k].idJuego, alquileres[k].cantidadDeAlquileres);
     }
 }
-
-void initAlquileresMap(int alquileres[][2], int sizeJuegos) {
-    int i;
-    for (i = 0; i < sizeJuegos; ++i) {
-        alquileres[i][0] = 0;
-        alquileres[i][1] = 0;
-    }
-
-}
-
+/**
+ * Initicializa la estructura auxiliar para guardar la cantidad de veces que se alquila un juego.
+ * @param alquileres Pointer to alquileres struct (estructura "auxiliar")
+ * @param sizeJuegos int size juegos
+ */
 void initAlquileresVecesAlquilado(Alquileres *alquileres, int sizeJuegos) {
     int i;
     //TODO CAMBIAR SIZE
@@ -516,6 +527,12 @@ void initAlquileresVecesAlquilado(Alquileres *alquileres, int sizeJuegos) {
 
 }
 
+/**
+ *
+ * @param alquileres Pointer to alquileres struct (estructura "auxiliar")
+ * @param juegos Pointer to juegos struct
+ * @param sizeJuegos int size juegos
+ */
 void printAlquileresMenosAlquilado(Alquileres *alquileres, eJuego *juegos, int sizeJuegos) {
     int i = 0, flag = 0, j = 0;
     printf("El/Los juego/s mas alquilado/s es/son: \n");
@@ -528,3 +545,39 @@ void printAlquileresMenosAlquilado(Alquileres *alquileres, eJuego *juegos, int s
         printf("El juego %s fue alquilado %d. \n",juegos[findJuegoById(juegos,sizeJuegos,alquileres[i+1].idJuego)].descripcion, alquileres[i+1].cantidadDeAlquileres);
     }
 }
+/**
+ * Busca una fecha con el dia, mes y año y muestra el/los clientes que alquilaron.
+ *
+ * @param dia int
+ * @param mes int
+ * @param ano int
+ * @param alquileres Pointer to alquileres struct
+ * @param juegos Pointer to juegos struct
+ * @param clientes Pointer to clientes struct
+ * @param lenJuegos int size juegos
+ * @param lenClientes int size clientes
+ */
+void fechaABuscarParaAlquileres(int dia, int mes, int ano, eAlquiler *alquileres, eJuego *juegos, eCliente *clientes,
+                           int lenJuegos,
+                           int lenClientes) {
+    int i, j, k;
+    for (i = 0; i < lenClientes; i++) {
+        if (clientes[i].isEmpty == 0)
+            for (k = 0; k < lenClientes * lenJuegos; k++) {
+                if (alquileres[k].isEmpty == 0 && alquileres[k].idCliente == clientes[i].idCliente &&
+                    alquileres[k].fecha.dia == dia && alquileres[k].fecha.mes == mes &&
+                    alquileres[k].fecha.ano == ano) {
+                    printf("------------------------------------------------------------\n");
+                    printf("| ID           |    %d\n", clientes[i].idCliente);
+                    printf("| Nombre       |    %s\n", clientes[i].name);
+                    printf("| Apellido     |    %s\n", clientes[i].lastName);
+                    printf("| Telefono     |    %s\n", clientes[i].telefono);
+                    printf("| Domicilio    |    %s\n", clientes[i].domicilio);
+                    printf("------------------------------------------------------------\n");
+
+                }
+
+            }
+    }
+}
+

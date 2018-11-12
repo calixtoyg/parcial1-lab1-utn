@@ -3,9 +3,10 @@
 
 CMakeFiles/Gonzalez_Calixto_1F.dir/alquiler.c.obj: ../alquiler.c
 
-CMakeFiles/Gonzalez_Calixto_1F.dir/cliente.c.obj: ../Cliente.h
 CMakeFiles/Gonzalez_Calixto_1F.dir/cliente.c.obj: ../cliente.c
+CMakeFiles/Gonzalez_Calixto_1F.dir/cliente.c.obj: ../cliente.h
 CMakeFiles/Gonzalez_Calixto_1F.dir/cliente.c.obj: ../functionsForProjects.h
+CMakeFiles/Gonzalez_Calixto_1F.dir/cliente.c.obj: ../juego.h
 
 CMakeFiles/Gonzalez_Calixto_1F.dir/functionsForProjects.c.obj: ../functionsForProjects.c
 CMakeFiles/Gonzalez_Calixto_1F.dir/functionsForProjects.c.obj: ../functionsForProjects.h

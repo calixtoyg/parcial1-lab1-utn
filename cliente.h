@@ -1,6 +1,7 @@
 #ifndef CLIENTE_H_INCLUDED
 #define CLIENTE_H_INCLUDED
 
+
 typedef struct {
     int idCliente;
     char lastName[51];
@@ -20,5 +21,6 @@ int getFreeSpaceClientes(eCliente clientes[], int len);
 int findClienteById(eCliente clientes[], int len, int id);
 void sortByLNameAndName(eCliente clientes[], int len);
 void toUpperLastNameAndNameClients(eCliente cliente[], int len);
+
 
 #endif
